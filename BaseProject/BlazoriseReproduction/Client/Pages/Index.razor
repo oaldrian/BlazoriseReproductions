@@ -2,8 +2,118 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<Paragraph>
+running on blazorize bootstrap 1.1.5, happening with webassembly and serverside blazor
+</Paragraph>
+<Paragraph>
+happening with webassembly and serverside blazor
+</Paragraph>
+<Paragraph>
+generated css suggests that the class is applied (div has class="col-4", or 8 applied) but somehow it gets overwritten by the rowcolumns count
+</Paragraph>
 
-Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<Button Color="Color.Primary" Clicked="@ShowModalWithout">Show Without Column Count</Button>
+<Button Color="Color.Primary" Clicked="@ShowModalWith">Show With Column Count</Button>
+
+<Modal @ref="withoutColumnCount">
+  <ModalContent IsCentered="true" Size="ModalSize.Fullscreen">
+    <Form>
+      <ModalHeader>
+        <ModalTitle>test without column count</ModalTitle>
+      </ModalHeader>
+      <ModalBody>
+        <Row>
+          <Column ColumnSize="ColumnSize.Is4">
+
+            <Field>
+              <FieldLabel><strong>test</strong></FieldLabel>
+              <FieldBody>
+                <TextEdit />
+              </FieldBody>
+            </Field>
+
+          </Column>
+          <Column ColumnSize="ColumnSize.Is8">
+
+            <Field>
+              <FieldLabel><strong>test</strong></FieldLabel>
+              <FieldBody>
+                <TextEdit />
+              </FieldBody>
+            </Field>
+
+          </Column>
+        </Row>
+      </ModalBody>
+       <ModalFooter>
+            <Button Color="Color.Secondary" Clicked="@HideModalWithout">Close</Button>
+        </ModalFooter>
+    </Form>
+  </ModalContent>
+</Modal>
+
+<Modal @ref="withColumnCount">
+  <ModalContent IsCentered="true" Size="ModalSize.Fullscreen">
+    <Form>
+      <ModalHeader>
+        <ModalTitle>test without column count</ModalTitle>
+      </ModalHeader>
+      <ModalBody>
+        <Row RowColumns="RowColumns.Are2.OnDesktop.Are2.OnTablet.Are1.OnMobile">
+          <Column ColumnSize="ColumnSize.Is4">
+
+            <Field>
+              <FieldLabel><strong>test</strong></FieldLabel>
+              <FieldBody>
+                <TextEdit />
+              </FieldBody>
+            </Field>
+          </Column>
+
+          <Column ColumnSize="ColumnSize.Is8">
+            <Field>
+              <FieldLabel><strong>test</strong></FieldLabel>
+              <FieldBody>
+                <TextEdit />
+              </FieldBody>
+            </Field>
+          </Column>
+        </Row>
+      </ModalBody>
+       <ModalFooter>
+            <Button Color="Color.Secondary" Clicked="@HideModalWith">Close</Button>
+        </ModalFooter>
+    </Form>
+  </ModalContent>
+</Modal>
+
+@code
+{
+
+      private Modal withoutColumnCount;
+      private Modal withColumnCount;
+
+    private Task ShowModalWithout()
+    {
+        return withoutColumnCount.Show();
+    }
+
+    private Task HideModalWithout()
+    {
+        return withoutColumnCount.Hide();
+    }
+
+          
+
+    private Task ShowModalWith()
+    {
+        return withColumnCount.Show();
+    }
+
+    private Task HideModalWith()
+    {
+        return withColumnCount.Hide();
+    }
+
+}
