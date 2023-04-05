@@ -9,3 +9,37 @@ Welcome to your new app.
 <SurveyPrompt Title="How is Blazor working for you?" />
 
 
+<Autocomplete TItem="string"
+              TValue="string"
+              Data="@data"
+              TextField="@(( item ) => item)"
+              ValueField="@(( item ) => item)"
+              Placeholder="Search..."
+              SelectionMode="AutocompleteSelectionMode.Checkbox"
+              FreeTyping
+              Disabled
+              @bind-SelectedValues="multipleSelectionData"
+              @bind-SelectedTexts="multipleSelectionTexts">
+</Autocomplete>
+
+<Field Horizontal>
+    <FieldBody ColumnSize="ColumnSize.Is12">
+        Selected Values: @string.Join(',', multipleSelectionData)
+    </FieldBody>
+    <FieldBody ColumnSize="ColumnSize.Is12">
+        Selected Texts: @(multipleSelectionTexts == null ? null : string.Join(',', multipleSelectionTexts))
+    </FieldBody>
+</Field>
+
+@code {
+  public List<string> data = new List<string>() { "a", "b", "c", "d" };
+
+    protected override async Task OnInitializedAsync()
+    {
+        multipleSelectionData = new List<string>() { data.ElementAt( 1 ), data.ElementAt( 3 ) };
+        await base.OnInitializedAsync();
+    }
+
+    List<string> multipleSelectionData;
+    List<string> multipleSelectionTexts;
+}
