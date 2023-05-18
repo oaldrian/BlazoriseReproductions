@@ -1,0 +1,480 @@
+﻿@page "/"
+
+<Button Color="Color.Primary" Clicked="@ShowModal">Show Modal</Button>
+
+<Modal @ref="modalRef">
+  <ModalContent Size="ModalSize.Fullscreen">
+    <Form>
+      <ModalHeader>
+        <ModalTitle>headline</ModalTitle>
+      </ModalHeader>
+
+      <ModalBody>
+        <Validations Mode="ValidationMode.Manual" ValidateOnLoad="false">
+          <Field>
+            <FieldLabel><strong>a</strong></FieldLabel>
+            <FieldBody>
+              <TextEdit Disabled="true" />
+            </FieldBody>
+          </Field>
+
+          <Field>
+            <FieldLabel><strong>a</strong></FieldLabel>
+            <FieldBody>
+              <TextEdit Disabled="true" />
+            </FieldBody>
+          </Field>
+          <Field>
+            <FieldLabel><strong>a</strong></FieldLabel>
+            <FieldBody>
+              <TextEdit Disabled="true" />
+            </FieldBody>
+          </Field>
+          <Field>
+            <FieldLabel><strong>a</strong></FieldLabel>
+            <FieldBody>
+              <TextEdit Disabled="true" />
+            </FieldBody>
+          </Field>
+          <Field>
+            <FieldLabel><strong>a</strong></FieldLabel>
+            <FieldBody>
+              <TextEdit Disabled="true" />
+            </FieldBody>
+          </Field>
+          <Field>
+            <FieldLabel><strong>a</strong></FieldLabel>
+            <FieldBody>
+              <TextEdit Disabled="true" />
+            </FieldBody>
+          </Field>
+          <Field>
+            <FieldLabel><strong>a</strong></FieldLabel>
+            <FieldBody>
+              <TextEdit Disabled="true" />
+            </FieldBody>
+          </Field>
+          <Field>
+            <FieldLabel><strong>a</strong></FieldLabel>
+            <FieldBody>
+              <TextEdit Disabled="true" />
+            </FieldBody>
+          </Field>
+          <Field>
+            <FieldLabel><strong>a</strong></FieldLabel>
+            <FieldBody>
+              <TextEdit Disabled="true" />
+            </FieldBody>
+          </Field>
+          <Field>
+            <FieldLabel><strong>a</strong></FieldLabel>
+            <FieldBody>
+              <TextEdit Disabled="true" />
+            </FieldBody>
+          </Field>
+          <Field>
+            <FieldLabel><strong>a</strong></FieldLabel>
+            <FieldBody>
+              <TextEdit Disabled="true" />
+            </FieldBody>
+          </Field>
+          <Field>
+            <FieldLabel><strong>a</strong></FieldLabel>
+            <FieldBody>
+              <TextEdit Disabled="true" />
+            </FieldBody>
+          </Field>
+          <Field>
+            <FieldLabel><strong>a</strong></FieldLabel>
+            <FieldBody>
+              <TextEdit Disabled="true" />
+            </FieldBody>
+            <Field>
+              <FieldLabel><strong>a</strong></FieldLabel>
+              <FieldBody>
+                <TextEdit Disabled="true" />
+              </FieldBody>
+              <Field>
+                <FieldLabel><strong>a</strong></FieldLabel>
+                <FieldBody>
+                  <TextEdit Disabled="true" />
+                </FieldBody>
+              </Field>
+              <Field>
+                <FieldLabel><strong>a</strong></FieldLabel>
+                <FieldBody>
+                  <TextEdit Disabled="true" />
+                </FieldBody>
+                <Field>
+                  <FieldLabel><strong>a</strong></FieldLabel>
+                  <FieldBody>
+                    <TextEdit Disabled="true" />
+                  </FieldBody>
+                </Field>
+                <Field>
+                  <FieldLabel><strong>a</strong></FieldLabel>
+                  <FieldBody>
+                    <TextEdit Disabled="true" />
+                  </FieldBody>
+                </Field>
+                <Field>
+                  <FieldLabel><strong>a</strong></FieldLabel>
+                  <FieldBody>
+                    <TextEdit Disabled="true" />
+                  </FieldBody>
+                </Field>
+                <Field>
+                  <FieldLabel><strong>a</strong></FieldLabel>
+                  <FieldBody>
+                    <TextEdit Disabled="true" />
+                  </FieldBody>
+                </Field>
+                <Field>
+                  <FieldLabel><strong>a</strong></FieldLabel>
+                  <FieldBody>
+                    <TextEdit Disabled="true" />
+                  </FieldBody>
+                </Field>
+                <Field>
+                  <FieldLabel><strong>a</strong></FieldLabel>
+                  <FieldBody>
+                    <TextEdit Disabled="true" />
+                  </FieldBody>
+                </Field>
+                <Field>
+                  <FieldLabel><strong>a</strong></FieldLabel>
+                  <FieldBody>
+                    <TextEdit Disabled="true" />
+                  </FieldBody>
+                </Field>
+                <Field>
+                  <FieldLabel><strong>a</strong></FieldLabel>
+                  <FieldBody>
+                    <TextEdit Disabled="true" />
+                  </FieldBody>
+                </Field>
+
+              </Field>
+            </Field>
+          </Field>
+        </Validations>
+      </ModalBody>
+      <ModalFooter>
+        <Button Color="Color.Secondary" Clicked="@HideModal">Close</Button>
+        <Button Color="Color.Primary" Clicked="@HideModal">Save Changes</Button>
+      </ModalFooter>
+    </Form>
+  </ModalContent>
+</Modal>
+
+@*<Modal @ref="modalRef">
+  <ModalContent Size="ModalSize.Fullscreen">
+    <Form>
+      <ModalHeader>
+        <ModalTitle>headline</ModalTitle>
+      </ModalHeader>
+      @if (loaded)
+      {
+        <ModalBody>
+          <Validations Mode="ValidationMode.Manual" ValidateOnLoad="false">
+            @*<Row RowColumns="RowColumns.Are2.OnDesktop.Are2.OnTablet.Are1.OnMobile">*
+            <Row>
+              <Column ColumnSize="ColumnSize.Is4">
+                <Row>
+                  <Column>
+                    <Field>
+                      <FieldLabel><strong>a</strong></FieldLabel>
+                      <FieldBody>
+                        <TextEdit Disabled="true" />
+                      </FieldBody>
+                    </Field>
+                  </Column>
+
+
+                  <Column>
+                    <Field>
+                      <FieldLabel><strong>b</strong></FieldLabel>
+                      <FieldBody>
+                        <Validation Validator="@ValidationRule.IsNotEmpty">
+                          <Select Multiple="false" TValue="string" Disabled>
+                            <ChildContent>
+                            </ChildContent>
+                            <Feedback><ValidationError /></Feedback>
+                          </Select>
+                        </Validation>
+                      </FieldBody>
+                    </Field>
+                  </Column>
+                </Row>
+
+                <Row>
+                  <Column>
+                    <Field>
+                      <FieldLabel><strong>c</strong></FieldLabel>
+                      <FieldBody>
+                        <Validation Validator="@ValidationRule.IsNotEmpty">
+                          <Select TValue="string" Disabled>
+                            <ChildContent>
+                            </ChildContent>
+                            <Feedback><ValidationError /></Feedback>
+                          </Select>
+                        </Validation>
+                      </FieldBody>
+                    </Field>
+                  </Column>
+                  <Column>
+                    <Field>
+                      <FieldLabel><strong>d</strong></FieldLabel>
+                      <FieldBody>
+                        <Validation Validator="@ValidationRule.IsNotEmpty">
+                          <Select TValue="string" Disabled>
+                            <ChildContent>
+                            </ChildContent>
+                            <Feedback><ValidationError /></Feedback>
+                          </Select>
+                        </Validation>
+                      </FieldBody>
+                    </Field>
+                  </Column>
+                </Row>
+                <Row>
+                  <Column>
+                    <Field>
+                      <FieldLabel><strong>e</strong></FieldLabel>
+                      <FieldBody>
+                        <Validation Validator="@ValidationRule.IsNotEmpty"><TextEdit ReadOnly><Feedback><ValidationError /></Feedback></TextEdit></Validation>
+                      </FieldBody>
+                    </Field>
+                  </Column>
+                  <Column>
+                    <Field>
+                      <FieldLabel><strong>f</strong></FieldLabel>
+                      <FieldBody>
+                        <Validation Validator="@ValidationRule.IsNotEmpty">
+                          <Select Multiple="false" TValue="string" Disabled>
+                            <ChildContent>
+                            </ChildContent>
+                            <Feedback><ValidationError /></Feedback>
+                          </Select>
+                        </Validation>
+                      </FieldBody>
+                    </Field>
+                  </Column>
+                </Row>
+
+                <Row>
+
+                  <Column>
+                    <Field>
+
+                      <FieldLabel><strong>g</strong></FieldLabel>
+                      <FieldBody>
+                        <Validation Validator="@ValidationRule.IsNotEmpty">
+                          <Select Multiple="false" TValue="string" Disabled>
+                            <ChildContent>
+                            </ChildContent>
+                            <Feedback><ValidationError /></Feedback>
+                          </Select>
+                        </Validation>
+                      </FieldBody>
+                    </Field>
+                  </Column>
+                  <Column>
+                  </Column>
+                </Row>
+
+                <Row>
+                  <Column>
+                    <Field>
+                      <FieldLabel><strong>h</strong></FieldLabel>
+                      <FieldBody>
+                        <Validation Validator="@ValidationRule.IsNotEmpty"><TextEdit><Feedback><ValidationError /></Feedback></TextEdit></Validation>
+                      </FieldBody>
+                    </Field>
+                  </Column>
+                </Row>
+
+                <Row>
+                  <Column>
+                    <Field>
+                      <FieldLabel><strong>i</strong></FieldLabel>
+                      <FieldBody>
+                        <Validation Validator="@ValidationRule.IsNotEmpty">
+                          <DatePicker TValue="DateTime" FirstDayOfWeek="DayOfWeek.Monday">
+                            <Feedback><ValidationError /></Feedback>
+                          </DatePicker>
+                        </Validation>
+                      </FieldBody>
+                    </Field>
+                  </Column>
+                  <Column>
+                    <Field>
+                      <FieldLabel><strong>j</strong></FieldLabel>
+                      <FieldBody>
+                        <Validation Validator="@ValidationRule.IsNotEmpty"> <NumericPicker TValue="int"><Feedback><ValidationError /></Feedback></NumericPicker></Validation>
+                      </FieldBody>
+                    </Field>
+                  </Column>
+                </Row>
+                <Row>
+                  <Column>
+                    <Field>
+                      <FieldLabel><strong>k</strong></FieldLabel>
+                      <FieldBody>
+                        <Validation Validator="@ValidationRule.IsNotEmpty">
+                          <TimePicker TValue="TimeSpan" TimeAs24hr>
+                            <Feedback><ValidationError /></Feedback>
+                          </TimePicker>
+                        </Validation>
+                      </FieldBody>
+                    </Field>
+                  </Column>
+                  <Column>
+                    <Field>
+                      <FieldLabel><strong>l</strong></FieldLabel>
+                      <FieldBody>
+                        <Validation Validator="@ValidationRule.IsNotEmpty">
+                          <TimePicker TValue="TimeSpan" TimeAs24hr>
+                            <Feedback><ValidationError /></Feedback>
+                          </TimePicker>
+                        </Validation>
+                      </FieldBody>
+                    </Field>
+                  </Column>
+                </Row>
+                <Field>
+                  <FieldLabel><strong><small>m</small></strong></FieldLabel>
+                  <FieldBody>
+                    <TextEdit Size="Size.Small" />
+                  </FieldBody>
+                </Field>
+                <Field>
+                  <FieldLabel><strong>n</strong></FieldLabel>
+                  <FieldBody>
+
+                    <Table Narrow>
+                      <TableHeader>
+                        <TableHeaderCell>o</TableHeaderCell>
+                        <TableHeaderCell>p</TableHeaderCell>
+                        <TableHeaderCell>q</TableHeaderCell>
+                        <TableHeaderCell>r</TableHeaderCell>
+                      </TableHeader>
+                      <TableBody>
+                        <TableRow>
+                          <TableRowCell>s</TableRowCell>
+                          <TableRowCell>t</TableRowCell>
+                          <TableRowCell>u</TableRowCell>
+                          <TableRowCell>v</TableRowCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableRowCell>s</TableRowCell>
+                          <TableRowCell>t</TableRowCell>
+                          <TableRowCell>u</TableRowCell>
+                          <TableRowCell>v</TableRowCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableRowCell>s</TableRowCell>
+                          <TableRowCell>t</TableRowCell>
+                          <TableRowCell>u</TableRowCell>
+                          <TableRowCell>v</TableRowCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableRowCell>s</TableRowCell>
+                          <TableRowCell>t</TableRowCell>
+                          <TableRowCell>u</TableRowCell>
+                          <TableRowCell>v</TableRowCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+
+                  </FieldBody>
+                </Field>
+              </Column>
+              <Column ColumnSize="ColumnSize.Is8">
+                <DataGrid TItem="int"
+                        Data="@values"
+                        Editable="true"
+                        EditMode="DataGridEditMode.Popup"
+                        Sortable="true"
+                        SortMode="DataGridSortMode.Multiple"
+                        Filterable="true"
+                        FilterMethod=DataGridFilterMethod.Contains
+                        ShowPager="false"
+                        ShowPageSizes="false"
+                        PagerPosition="DataGridPagerPosition.Top"
+                        Virtualize
+                        VirtualizeOptions="@(new VirtualizeOptions { DataGridHeight = "750px", DataGridMaxHeight = "750px" })"
+                        Narrow="true"
+                        PageSize="10"
+                        Responsive="true"
+                        Style="font-size: 17px;">
+
+                  <DataGridColumns>
+                    <DataGridCommandColumn TItem="int" ClearFilterCommandAllowed="true">
+                      <ClearFilterCommandTemplate>
+                        <Button Color="Color.Warning" Size="Size.ExtraSmall" Clicked="@context.Clicked">delete</Button>
+                      </ClearFilterCommandTemplate>
+                      <DeleteCommandTemplate></DeleteCommandTemplate>
+
+                      <NewCommandTemplate>
+                      </NewCommandTemplate>
+
+                      <EditCommandTemplate>
+                        <Button Color="Color.Primary" Size="Size.ExtraSmall" Clicked="@context.Clicked">edit</Button>
+                      </EditCommandTemplate>
+                      <DeleteCommandTemplate>
+                      </DeleteCommandTemplate>
+                      <SaveCommandTemplate>
+                      </SaveCommandTemplate>
+                      <CancelCommandTemplate>
+                      </CancelCommandTemplate>
+                    </DataGridCommandColumn>
+
+                    <DataGridColumn Filterable Editable Caption="x"></DataGridColumn>
+                    <DataGridColumn Filterable Editable Caption="y"></DataGridColumn>
+                    <DataGridColumn Filterable Editable Caption="z"></DataGridColumn>
+
+                  </DataGridColumns>
+                </DataGrid>
+              </Column>
+            </Row>
+          </Validations>
+        </ModalBody>
+
+      }
+      else
+      {
+        <ModalBody>
+          <Field>
+            <FieldLabel>not loaded</FieldLabel>
+          </Field>
+        </ModalBody>
+      }
+      <ModalFooter>
+        <Button Color="Color.Secondary" Clicked="@HideModal">Close</Button>
+        <Button Color="Color.Primary" Clicked="@HideModal">Save Changes</Button>
+      </ModalFooter>
+    </Form>
+  </ModalContent>
+</Modal>
+*@
+
+
+@code {
+  // reference to the modal component
+  private Modal modalRef;
+
+  bool loaded = true;
+
+  private List<int> values = new List<int>();
+
+  private Task ShowModal()
+  {
+    return modalRef.Show();
+  }
+
+  private Task HideModal()
+  {
+    return modalRef.Hide();
+  }
+}
