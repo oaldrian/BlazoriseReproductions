@@ -1,4 +1,21 @@
 ﻿@page "/"
 
+<Button Color="Color.Primary">this is the primary color</Button>
 
+<DataGrid TItem="Boolholder" Data="@list" PageSize="5" Responsive Editable Filterable>
+  <DataGridCheckColumn Field="@nameof(Boolholder.TheBool)" Caption="Email" Editable />
+</DataGrid>
+@code {
 
+  private class Boolholder
+  {
+    public bool TheBool { get; set; }
+
+    public Boolholder(bool value)
+    {
+      TheBool = value;
+    }
+  }
+
+  private List<Boolholder> list = new List<Boolholder>() { new Boolholder(false), new Boolholder(false), new Boolholder(true), new Boolholder(true), new Boolholder(false) };
+}
