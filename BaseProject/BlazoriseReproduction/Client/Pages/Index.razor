@@ -1,6 +1,12 @@
 ﻿@page "/"
 
+<Heading>How to reproduce</Heading>
 
+Hit Backspace without entering anything else first. In certain conditions the Autocomplete excepts.
+
+<Heading>Case 1</Heading>
+
+SelectedTexts is not bound.
 
 <Autocomplete TItem="string"
               TValue="string"
@@ -9,30 +15,45 @@
               ValueField="@(( item ) => item)"
               Placeholder="Search..."
               SelectionMode="AutocompleteSelectionMode.Checkbox"
-              FreeTyping
-              Disabled
+              @bind-SelectedValues="multipleSelectionData">
+
+</Autocomplete>
+
+<Heading>Case 2</Heading>
+
+SelectedTexts is bound but null.
+
+<Autocomplete TItem="string"
+              TValue="string"
+              Data="@dataEmpty"
+              TextField="@(( item ) => item)"
+              ValueField="@(( item ) => item)"
+              Placeholder="Search..."
+              SelectionMode="AutocompleteSelectionMode.Checkbox"
+              @bind-SelectedValues="multipleSelectionData"
+              @bind-SelectedTexts="multipleSelectionTextsNull">
+</Autocomplete>
+
+<Heading>Case 2 - Working</Heading>
+
+SelectedTexts is bound and not null.
+
+<Autocomplete TItem="string"
+              TValue="string"
+              Data="@dataEmpty"
+              TextField="@(( item ) => item)"
+              ValueField="@(( item ) => item)"
+              Placeholder="Search..."
+              SelectionMode="AutocompleteSelectionMode.Checkbox"
               @bind-SelectedValues="multipleSelectionData"
               @bind-SelectedTexts="multipleSelectionTexts">
 </Autocomplete>
 
-<Field Horizontal>
-    <FieldBody ColumnSize="ColumnSize.Is12">
-        Selected Values: @string.Join(',', multipleSelectionData)
-    </FieldBody>
-    <FieldBody ColumnSize="ColumnSize.Is12">
-        Selected Texts: @(multipleSelectionTexts == null ? null : string.Join(',', multipleSelectionTexts))
-    </FieldBody>
-</Field>
-
 @code {
   public List<string> data = new List<string>() { "a", "b", "c", "d" };
+  public List<string> dataEmpty = new List<string>();
 
-    protected override async Task OnInitializedAsync()
-    {
-        multipleSelectionData = new List<string>() { data.ElementAt( 1 ), data.ElementAt( 3 ) };
-        await base.OnInitializedAsync();
-    }
-
-    List<string> multipleSelectionData;
-    List<string> multipleSelectionTexts;
+  List<string> multipleSelectionData;
+  List<string> multipleSelectionTexts = new List<string>();
+  List<string> multipleSelectionTextsNull;
 }
